@@ -81,5 +81,20 @@ public class Service {
 
 	        return sizeAll(root.left) + sizeAll(root.right) + 1;
 	    }
+	    public void search(int data) {
+	        if(searchAll(root, data))
+	            System.out.println("Given " +data+ " node is present in the tree ");
+	        else
+	            System.out.println(" Given " +data+ " node is not present in the tree");
+	    }
+	    public boolean searchAll(Node root, int data) {
 
+	        if (root == null)
+	            return false;
+	        if(root.data == data)
+	            return true;
+	        else
+	            return searchAll(root.left, data) || searchAll(root.right, data);
+
+	    }
 }

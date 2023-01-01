@@ -71,5 +71,15 @@ public class Service {
 	            postorder(r.right);
 	            System.out.print(r.data + " ");
 	        }
+	    } public void size() {
+	        System.out.println("\n The size of the tree is: " + sizeAll(root));
 	    }
+	    public int sizeAll(Node root) {
+
+	        if (root == null)
+	            return 0;
+
+	        return sizeAll(root.left) + sizeAll(root.right) + 1;
+	    }
+
 }
